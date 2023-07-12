@@ -5,6 +5,9 @@ export default {
     '*.js'
   ],
   theme: {
+    fontFamily: {
+      
+    },
     extend: {},
   },
   plugins: [],
