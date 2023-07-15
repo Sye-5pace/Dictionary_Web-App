@@ -2,6 +2,7 @@ export interface WordEntry{
     word: string;
     phonetic: string;
     phonetics: Phonetic[];
+    sourceUrls: string[]
     origin: string;
     meanings: Meaning[];
 }

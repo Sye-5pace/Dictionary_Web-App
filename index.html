@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
     <link href="/dist/output.css" rel="stylesheet">
     <title>DWA</title>
   </head>
-  <body class="w-full min-h-screen p-0 m-0 border-box <!-- #ecc205] --> grid grid-rows-[10%_85%] gap-y-4 <!-- children:w-[60%] -->">
+  <body class="w-full min-h-screen font-lora p-0 m-0 border-box grid  gap-y-4">
     <header class="bg-yellow-300 w-[50%] mx-auto mt-4 flex flex-row items-center justify-between px-2">
       <svg class="w-8 h-8 fill-[#d0d1d0]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
         </path><path d="M21 18H6C5.44772 18 5 18.4477 5 19C5 19.5523 5.44772 20 6 20H21V22H6C4.34315 22 3 20.6569 3 19V4C3 2.89543 3.89543 2 5 2H21V18ZM5 16.05C5.16156 16.0172 5.32877 16 5.5 16H19V4H5V16.05ZM16 9H8V7H16V9Z"></path>
       </svg>
       <div class="flex flex-row items-center gap-4">
-        <div class="flex flex-row items-center gap-2 border-2">
-          <h2 class="text-[1.2rem]">Serif</h2>
+        <div class="flex flex-row items-center gap-2">
+          <h2 class="text-[1.2rem] font-lora font-semibold">Serif</h2>
           <svg class="w-4 h-4 stroke-[#c497e3]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>          
@@ -30,12 +34,54 @@
         </svg>
       </div>
     </header>
-    <main class="bg-teal-800 w-[50%] mx-auto">
-      <section class="w-full rounded-[1.2rem] bg-[#f4f4f4] h-[9%] flex flex-row items-center px-4 justify-between" >
-        <input id="word-search"  class="focus:outline-none bg-[#f4f4f4] h-full" placeholder="Enter word"/>
-        <svg class="w-6 h-6 stroke-[#c497e3]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <main class="bg-teal-800 w-[50%] mx-auto flex flex-col gap-y-4">
+      <section class="w-full rounded-[0.9rem] bg-[#f4f4f4] h-[4rem] flex flex-row items-center px-4 justify-between" >
+        <input id="word-search"  class="focus:outline-none  bg-[#f4f4f4] font-lora font-semibold text-[1.125rem] w-[20rem]" placeholder="Enter word"/>
+        <svg id="search" class="w-6 h-6 stroke-[#c497e3] cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 ">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>        
+      </section>
+      <section id="phonetic-group"  class="flex flex-row h-[4.5rem] items-center justify-between px-3">
+        <div id="word-phonetic" class="flex flex-col font-lora py-2">
+          <h1 class="font-bold text-[2.5rem]"></h1>
+          <p class="text-[0.8rem] font-normal text-[#c497e3]"></p>
+        </div>
+        <div  class="rounded-full bg-[#e9cefb] w-11 h-11 bg-opacity-80 flex flex-row items-center justify-center">
+          <audio id="audio-tag" src=""></audio>          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 fill-[#a446ee]">
+            <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </section>
+      <section class="flex flex-col gap-y-3 pl-2">
+        <div class="flex flex-row items-center gap-3">
+          <p class="font-bold font-italic text-[1.5rem]">noun</p>
+          <div class="bg-slate-700 w-[86%] h-[0.02rem]"></div>
+        </div>
+        <p class="text-[#a9a8a8] font-thin font-italic font-cormorant text-[1.4rem]">Meaning</p>
+        <div class=" pl-4 marker:text-[#c497e3] flex flex-col gap-2">
+          <li id="noun-meaning-1"></li>
+          <li id="noun-meaning-2"></li>
+          <li id="noun-meaning-3"></li>
+        </div>
+        <div class="">
+          <p class="text-[#a9a8a8] font-cormorant text-[1.4rem] font-thin font-italic">Synonyms</p>
+          <span></span>
+        </div>
+        <div class="flex flex-row items-center gap-3">
+          <p class="font-bold text-[1.5rem]">verb</p>
+          <div class="bg-slate-700 w-[86%] h-[0.02rem]"></div>
+        </div>
+        <p class="text-[#a9a8a8] font-cormorant text-[1.4rem] font-thin font-italic">Meaning</p>
+        <div  class="pl-4 marker:text-[#c497e3] flex flex-col gap-y-2">
+          <li id="verb-meaning"></li>
+          <p id="verb-example" class="ml-8"></p>
+        </div>
+        <div class="w-full h-[0.04rem]"></div>
+        <div class="flex flex-row gap-2">
+          <p>Source</p>
+          <a id="source-link" target="_blank"></a>
+        </div>
       </section>
     </main>
     <script type="module" src="./index.ts"></script>
