@@ -3,7 +3,7 @@ const plugin = require('tailwindcss/plugin');
 export default {
   content: [
     '*.html',
-    '*.js'
+    '*.ts'
   ],
   theme: {
     screens: {
@@ -13,8 +13,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'lora':['Lora','serif'],
-        'cormorant':['Cormorant Garamond', 'serif']
+        'mono':['DM Mono','monospace'],
+        'sans':['Poppins','sans'],
+        'serif':['Trirong','serif']
       },
     },
   },
