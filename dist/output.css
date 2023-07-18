@@ -796,6 +796,10 @@ video {
   font-size: 2rem;
 }
 
+.text-\[0\.85rem\] {
+  font-size: 0.85rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -828,6 +832,14 @@ video {
 .text-\[\#c497e3\] {
   --tw-text-opacity: 1;
   color: rgb(196 151 227 / var(--tw-text-opacity));
+}
+
+.text-\[\] {
+  color: ;
+}
+
+.text-\[0\.\] {
+  color: 0.;
 }
 
 .filter {

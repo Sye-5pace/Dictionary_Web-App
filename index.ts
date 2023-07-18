@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded',() => {
         //font-switcher
         const fontGroup = document.getElementById('font-group') as HTMLSelectElement;
         let selectedFont= localStorage.getItem('selectedFont');
-        // const defaultFont = 'serif';
-        // fontGroup.value = selectedFont;
         
         document.body.classList.add(`font-${selectedFont}`);
 

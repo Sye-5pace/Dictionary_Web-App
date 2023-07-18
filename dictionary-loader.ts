@@ -4,7 +4,8 @@ const wordInput = document.getElementById("word-search") as HTMLInputElement;
 const search = document.getElementById("search")
 let wordValue:string='';
 
-//
+
+//Form validation
 search.addEventListener("click", () => {
   wordValue = wordInput.value.toLowerCase().trim();
   if (/^[a-zA-Z]+$/.test(wordValue)) {
@@ -14,27 +15,56 @@ search.addEventListener("click", () => {
   }
 });
 
-    
+
 //making a fetch request
 const wordSearch = async() => {
-    //DictionaryAPIEntryPoint + wordInput value
-    const dictionaryEntry = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordValue}`;
-    
-    try{
-        const response = await fetch(dictionaryEntry);
-        if(!response.ok){
-            throw new Error("Request failed with status: " + response.status);
-        }
-        const word: WordEntry[] = await response.json();
-        // console.log(word[0]);
-        const [wordIndex] = word
-        console.log(wordIndex);
-        dictionaryUpdater(wordIndex)
-    }catch(error: any){
-        console.log(error);
-    }
-}
+  // Reset the elements' content before making a new request
+  resetElementsContent(); 
 
+  //DictionaryAPIEntryPoint + wordInput value
+  const dictionaryEntry = `https://api.dictionaryapi.dev/api/v2/entries/en/${wordValue}`;
+  
+  try{
+    const response = await fetch(dictionaryEntry);
+    if(!response.ok){
+      throw new Error("Request failed with status: " + response.status);
+    }
+    const word: WordEntry[] = await response.json();
+    // console.log(word[0]);
+    const [wordIndex] = word
+    console.log(wordIndex);
+    dictionaryUpdater(wordIndex)
+  }catch(error: any){
+    console.log(error);
+  }
+}
+  
+const resetElementsContent = (): void => {
+  // Reset the word and phonetic content
+  const wordPhonetic = document.getElementById("word-phonetic") as HTMLElement;
+  wordPhonetic.querySelector("h1").textContent = "";
+  wordPhonetic.querySelector("p").textContent = "";
+
+  // Reset the noun meanings content
+  document.getElementById("noun-meaning-1").textContent = "";
+  document.getElementById("noun-meaning-2").textContent = "";
+
+  // Reset the verb meanings content
+  document.getElementById("verb-meaning").textContent = "";
+  document.getElementById("verb-example").textContent = "";
+
+  // Reset the source link content
+  document.getElementById("source-link").href = "#";
+  document.getElementById("source-link").textContent = "";
+
+  // Reset the audio tag source
+  const audioTag = document.getElementById("audio-tag") as HTMLAudioElement;
+  audioTag.src = "";
+
+  // Reset the synonyms content
+  const synonymsValue = document.getElementById("synonyms-value");
+  synonymsValue.textContent = "";
+};
 
 export const dictionaryUpdater = (wordIndex: WordEntry): void => {
   const wordPhonetic = document.getElementById("word-phonetic") as HTMLElement;
@@ -73,7 +103,7 @@ export const dictionaryUpdater = (wordIndex: WordEntry): void => {
     const firstVerbExample = firstVerbMeaning.definitions[0]?.example;
 
     document.getElementById("verb-meaning").textContent = firstVerbDefinition;
-    document.getElementById("verb-example").textContent = `"${firstVerbExample}"`;
+    document.getElementById("verb-example").textContent = `"${firstVerbExample}"` || 'No examples found';
   }
 
   wordPhonetic.querySelector("h1").textContent = word;
@@ -103,7 +133,3 @@ export const dictionaryUpdater = (wordIndex: WordEntry): void => {
   }
 };
 
-
-//error message
-// TypeError: Cannot read properties of undefined (reading 'definitions')
-//     at dictionaryUpdater (dictionary-loader.ts:56:50)
