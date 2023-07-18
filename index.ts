@@ -4,10 +4,9 @@ document.addEventListener('DOMContentLoaded',() => {
         //importing interface for word type
         //font-switcher
         const fontGroup = document.getElementById('font-group') as HTMLSelectElement;
-        const savedFont = localStorage.getItem('selectedFont');
-        const defaultFont = 'serif';
-        let selectedFont = savedFont || defaultFont;
-        fontGroup.value = selectedFont;
+        let selectedFont= localStorage.getItem('selectedFont');
+        // const defaultFont = 'serif';
+        // fontGroup.value = selectedFont;
         
         document.body.classList.add(`font-${selectedFont}`);
 

@@ -129,7 +129,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: DM Mono, monospace;
+  font-family: Azeret Mono, monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -579,8 +579,8 @@ video {
   height: 1.125rem;
 }
 
-.h-\[15rem\] {
-  height: 15rem;
+.h-\[10rem\] {
+  height: 10rem;
 }
 
 .min-h-screen {

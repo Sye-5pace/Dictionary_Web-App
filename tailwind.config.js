@@ -13,7 +13,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'mono':['DM Mono','monospace'],
+        'mono':['Azeret Mono','monospace'],
         'sans':['Poppins','sans'],
         'serif':['Trirong','serif']
       },
