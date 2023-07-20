@@ -772,6 +772,10 @@ video {
   font-family: Trirong, serif;
 }
 
+.text-\[0\.85rem\] {
+  font-size: 0.85rem;
+}
+
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
@@ -794,10 +798,6 @@ video {
 
 .text-\[2rem\] {
   font-size: 2rem;
-}
-
-.text-\[0\.85rem\] {
-  font-size: 0.85rem;
 }
 
 .font-bold {
@@ -834,14 +834,6 @@ video {
   color: rgb(196 151 227 / var(--tw-text-opacity));
 }
 
-.text-\[\] {
-  color: ;
-}
-
-.text-\[0\.\] {
-  color: 0.;
-}
-
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -856,6 +848,15 @@ video {
 
 .switch-light{
   transform:translateX(-23px) translateY();
+}
+
+:root {
+  --font-family: 'Trirong', serif;
+  /* Default font */
+}
+
+body {
+  font-family: var(--font-family);
 }
 
 .marker\:text-\[\#c497e3\] *::marker {
