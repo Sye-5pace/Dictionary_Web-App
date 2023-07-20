@@ -1,6 +1,4 @@
-
-
-export const applyFont = (font) => {
+export const applyFont = (font: string) => {
     const body = document.querySelector('body') as HTMLBodyElement;
     const inputField = body.querySelector('input') as HTMLInputElement;
     const word = document.querySelector('#word-phonetic > h1') as HTMLHeadingElement 

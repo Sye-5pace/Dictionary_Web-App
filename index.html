@@ -17,8 +17,8 @@
     <title>DWA</title>
   </head>
   <body class="grid w-full min-h-screen p-0 m-0 grid-rows-[8%_70%] font-serif border-box gap-y-8">
-    <header class=" w-[50%] mx-auto mt-6 flex flex-row items-center justify-between px-2">
-      <svg class="w-8 h-8 fill-[#d0d1d0]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
+    <header class=" w-[50%] mobile:w-[70%] mx-auto mt-6 flex flex-row items-center justify-between px-2">
+      <svg id="logo" class="w-12 h-12 fill-[#d0d1d0]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z">
         </path><path d="M21 18H6C5.44772 18 5 18.4477 5 19C5 19.5523 5.44772 20 6 20H21V22H6C4.34315 22 3 20.6569 3 19V4C3 2.89543 3.89543 2 5 2H21V18ZM5 16.05C5.16156 16.0172 5.32877 16 5.5 16H19V4H5V16.05ZM16 9H8V7H16V9Z"></path>
       </svg>
       <div class="flex flex-row items-center gap-4">
@@ -38,9 +38,9 @@
         </svg>
       </div>
     </header>
-    <main class=" w-[50%] mx-auto flex flex-col gap-y-8">
-      <section class="w-full rounded-[0.9rem] bg-[#f4f4f4] h-[10rem] flex flex-row items-center px-4 justify-between" >
-        <input id="word-search"  class="focus:outline-none  bg-[#f4f4f4] font-serif font-semibold text-[1.125rem] w-[20rem]" placeholder="Enter word"/>
+    <main class=" w-[50%] mobile:w-[70%] mx-auto flex flex-col gap-y-8">
+      <section class="w-full rounded-[4rem] bg-[#f4f4f4] h-[8rem] mobile:h-[6rem] tablet:h-[6rem] flex flex-row items-center px-4 justify-between" >
+        <input id="word-search"  class="pl-4 focus:outline-none  bg-[#f4f4f4] font-serif font-semibold text-[1.125rem] " placeholder="Enter word"/>
         <svg id="search" class="w-6 h-6 stroke-[#c497e3] cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 ">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>        

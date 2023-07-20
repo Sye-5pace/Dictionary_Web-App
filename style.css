@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 .switch{
-    transition: transform  0.2s ease;
+  transition: transform  0.2s ease;
 }
 
 .switch-dark{
-    transform:translateX(16.5px) translateY(0);
+  transform:translateX(16.5px) translateY(0);
 }
 
 .switch-light{
-    transform:translateX(-23px) translateY();
+  transform:translateX(-23px) translateY();
 }
 
 :root {
