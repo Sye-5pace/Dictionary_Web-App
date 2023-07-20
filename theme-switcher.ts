@@ -19,6 +19,9 @@ export const toggleTheme = (darkModeEnabled) => {
     const switchTheme = document.querySelector('#switch') as HTMLDivElement;
     const moonIcon = document.querySelector('#dark') as HTMLElement;
     const logo = document.querySelector('#logo') as HTMLElement;
+    const audioContainer = document.querySelector('#audio-container') as HTMLDivElement;
+    const play = document.querySelector("#play") as HTMLElement;
+    const pause = document.querySelector("#pause") as HTMLElement;
   
     // Get the theme preference from localStorage
     if(darkModeEnabled) {
@@ -27,8 +30,8 @@ export const toggleTheme = (darkModeEnabled) => {
           body.style.color = '#c9c9c8';
           switchContainer.style.backgroundColor = '#a245ec';
           switchTheme.style.backgroundColor = '#fffaff';
-          moonIcon.classList.add('fill-[#683a92]');
-          logo.classList.add('fill-[#2f2e2f]');
+          moonIcon.style.fill = '#683a92';
+          logo.style.fill = '#683a92';
           word.style.color = '#f3f2f3';
           fontGroup.style.backgroundColor = '#040504';
           fontGroup.style.color = '#fff';
@@ -37,7 +40,9 @@ export const toggleTheme = (darkModeEnabled) => {
           nounMeaning3.style.color = '#bfbbc3';
           synonymsVal.style.color = '#683a92';
           source.style.color = '#bfbbc3';
-        //   saveThemePreference()
+          audioContainer.style.backgroundColor = "#a245ec";
+          play.style.fill = "#fffaff"
+          pause.style.stroke = "#fffaff"
         } else {
             switchTheme.style.transform = "translateX(0) translateY(0)";
           body.style.backgroundColor = '#fff';
@@ -45,9 +50,9 @@ export const toggleTheme = (darkModeEnabled) => {
           inputField.style.color = '#000';
           switchContainer.style.backgroundColor = '#757575';
           switchTheme.style.backgroundColor = '#fffaff';
-          moonIcon.classList.remove('fill-[#683a92]');
-          logo.classList.remove('fill-[#2f2e2f]');
-          word.style.color = '#f3f2f3';
+          moonIcon.style.fill = '#d0d1d0';
+          logo.style.fill = '#d0d1d0';
+          word.style.color = '#000';
           fontGroup.style.backgroundColor = '#fff';
           fontGroup.style.color = '#000';
           nounMeaning1.style.color = '#000';
@@ -55,6 +60,9 @@ export const toggleTheme = (darkModeEnabled) => {
           nounMeaning3.style.color = '#000';
           synonymsVal.style.color = '#000';
           source.style.color = '#000';
+          audioContainer.style.backgroundColor = "#e9cefb";
+          play.style.fill = "#a446ee"
+          pause.style.stroke = "#a446ee"
     }
     saveThemePreference(darkModeEnabled)
 };

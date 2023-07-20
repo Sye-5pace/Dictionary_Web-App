@@ -113,14 +113,7 @@ export const dictionaryUpdater = (wordIndex: WordEntry): void => {
 
   const audioTag = document.getElementById("audio-tag") as HTMLAudioElement;
   audioTag.src = firstPhoneticAudio || '';
-
-  audioTag.addEventListener("play", () => {
-    audioTag.classList.add("playing");
-  });
-
-  audioTag.addEventListener("pause", () => {
-    audioTag.classList.remove("playing");
-  });
+  // console.log(audioTag.src);
 
   const synonymsValue = document.getElementById("synonyms-value");
   const synonyms = wordIndex.meanings

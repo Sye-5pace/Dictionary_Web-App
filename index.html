@@ -50,11 +50,14 @@
           <h1 class="font-bold text-[2rem]"></h1>
           <p class="pl-2 text-[0.8rem] font-normal text-[#c497e3]"></p>
         </div>
-        <div id="audio-container"  class="hover:bg-opacity-5 hover:border-[#e9cefb] hover:border-2 rounded-full bg-[#e9cefb] w-11 h-11 bg-opacity-80 flex flex-row items-center justify-center cursor-pointer">
-          <audio id="audio-tag" src=""></audio>          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 fill-[#a446ee]">
+        <div id="audio-container"  class="hover:bg-opacity-5 hover:border-[#a245ec] hover:border-[1px] rounded-full bg-[#e9cefb] w-11 h-11 bg-opacity-80 flex flex-row items-center justify-center cursor-pointer">
+          <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 fill-[#a446ee]">
             <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
           </svg>
+          <svg id="pause" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 stroke-[#a446ee] hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+          </svg>          
+          <audio id="audio-tag"  src=""></audio>          
         </div>
       </section>
       <section class="flex flex-col pl-2 gap-y-2">
